@@ -34,13 +34,15 @@ def countingValleys(n, s):
 if __name__ == '__main__':
     input_path = 'input/'
     for filename in os.listdir(input_path):
-        print('--->file %s' % (filename))
+        print('📂 %s' % (filename))
         f = open(input_path + filename, 'r')
         keyboard = Controller()
         keyboard.type(f.read())
         keyboard.press(Key.enter)
+
         n = int(input())
         s = input()
+
         start_time = time.time()
         countingValleys(n, s)
-        print("--- %s seconds ---" % (time.time() - start_time))
+        print("⏰ %.12f seconds ⏰" % (time.time() - start_time))

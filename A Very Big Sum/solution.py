@@ -20,13 +20,15 @@ def aVeryBigSum(ar):
 if __name__ == '__main__':
     input_path = 'input/'
     for filename in os.listdir(input_path):
-        print('--->file %s' % (filename))
+        print('📂 %s' % (filename))
         f = open(input_path + filename, 'r')
         keyboard = Controller()
         keyboard.type(f.read())
         keyboard.press(Key.enter)
+
         ar_count = int(input())
         ar = list(map(int, input().rstrip().split()))
+
         start_time = time.time()
         aVeryBigSum(ar)
-        print("--- %s seconds ---" % (time.time() - start_time))
+        print("⏰ %.12f seconds ⏰" % (time.time() - start_time))
