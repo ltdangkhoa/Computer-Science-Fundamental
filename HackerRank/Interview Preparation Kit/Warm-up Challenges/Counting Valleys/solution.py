@@ -1,4 +1,4 @@
-#!/bin/python3
+"""solution.py"""
 
 import math
 import os
@@ -8,6 +8,7 @@ import sys
 
 import time
 from pynput.keyboard import Key, Controller
+
 
 def countingValleys(n, s):
     """
