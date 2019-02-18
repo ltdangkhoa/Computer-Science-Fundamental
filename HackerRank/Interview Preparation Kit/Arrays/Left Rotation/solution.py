@@ -67,11 +67,13 @@ if __name__ == '__main__':
         f = open(input_path + filename, 'r')
 
         inputs = f.readlines()
+        input_line = 0
 
-        nd = inputs[0].split()
+        nd = inputs[input_line].split()
+        input_line += 1
         n = int(nd[0])
         d = int(nd[1])
-        a = list(map(int, inputs[1].rstrip().split()))
+        a = list(map(int, inputs[input_line].rstrip().split()))
 
         start_time = time.time()
         result = rotLeft(a, d)

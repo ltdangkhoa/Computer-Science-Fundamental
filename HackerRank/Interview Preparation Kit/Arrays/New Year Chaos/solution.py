@@ -10,18 +10,25 @@ import time
 
 def minimumBribes(q):
     """
-    O(?)
+    O(n)
     """
+    step = 0
     len_q = len(q)
-    total = 0
-    for i, x in enumerate(q):
-        if i < (len_q - 1) and q[i] > q[i+1]:
-            q[i], q[i+1] = q[i+1], q[i]
-            total += 1
-            print(q)
+    for i in range(len_q, 0, -1):
+        if q[i-1] == i:
+            step += 0
+        elif q[i-2] == i and i > 1:
+            step += 1
+            q[i-2], q[i-1] = q[i-1], q[i-2]
+        elif q[i-3] == i and i > 2:
+            step += 2
+            q[i-3], q[i-2] = q[i-2], q[i-3]
+            q[i-2], q[i-1] = q[i-1], q[i-2]
+        else:
+            step = False
+            break
 
-    print('-->%s' % (total))
-    return True
+    print('Too chaotic' if step is False else step)
 
 
 if __name__ == '__main__':

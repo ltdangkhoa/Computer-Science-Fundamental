@@ -7,8 +7,6 @@ import re
 import sys
 
 import time
-from pynput.keyboard import Key, Controller
-
 
 def hourglassSum(arr):
     """
@@ -45,13 +43,14 @@ if __name__ == '__main__':
     for filename in os.listdir(input_path):
         print('📂 %s' % (filename))
         f = open(input_path + filename, 'r')
-        keyboard = Controller()
-        keyboard.type(f.read())
-        keyboard.press(Key.enter)
+
+        inputs = f.readlines()
+        input_line = 0
 
         arr = []
         for _ in range(6):
-            arr.append(list(map(int, input().rstrip().split())))
+            arr.append(list(map(int, inputs[input_line].rstrip().split())))
+            input_line += 1
 
         start_time = time.time()
         result = hourglassSum(arr)

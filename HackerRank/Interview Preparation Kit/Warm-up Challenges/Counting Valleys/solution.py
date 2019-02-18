@@ -7,7 +7,6 @@ import re
 import sys
 
 import time
-from pynput.keyboard import Key, Controller
 
 
 def countingValleys(n, s):
@@ -37,12 +36,13 @@ if __name__ == '__main__':
     for filename in os.listdir(input_path):
         print('📂 %s' % (filename))
         f = open(input_path + filename, 'r')
-        keyboard = Controller()
-        keyboard.type(f.read())
-        keyboard.press(Key.enter)
 
-        n = int(input())
-        s = input()
+        inputs = f.readlines()
+        input_line = 0
+
+        n = int(inputs[input_line])
+        input_line += 1
+        s = inputs[input_line]
 
         start_time = time.time()
         countingValleys(n, s)
