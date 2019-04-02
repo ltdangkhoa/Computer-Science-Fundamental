@@ -1,0 +1,9 @@
+list
+plus-circle
+arrow-left
+th-large
+plus
+map-marker
+align-justify
+save
+trash
