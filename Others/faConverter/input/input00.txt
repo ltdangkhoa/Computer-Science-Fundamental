@@ -1,9 +1,5 @@
-list
-plus-circle
-arrow-left
-th-large
-plus
-map-marker
-align-justify
-save
-trash
+utensils
+bicycle
+file-invoice-dollar
+person-booth
+recycle
